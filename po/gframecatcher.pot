@@ -1,0 +1,215 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-05-15 14:54-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: mainWindow.py:81
+msgid "Drop not allowed"
+msgstr ""
+
+#: mainWindow.py:88
+#, python-format
+msgid "mimetype %s not supported"
+msgstr ""
+
+#: mainWindow.py:101 mainWindow.py:296
+msgid "Frame"
+msgstr ""
+
+#: mainWindow.py:128
+msgid "Open File..."
+msgstr ""
+
+#: mainWindow.py:137
+msgid "Video Files"
+msgstr ""
+
+#: mainWindow.py:151
+msgid "All Files"
+msgstr ""
+
+#: mainWindow.py:202 mainWindow.py:230 mainWindow.py:237
+msgid "There is no video open"
+msgstr ""
+
+#: mainWindow.py:205
+msgid "Select Directory..."
+msgstr ""
+
+#: mainWindow.py:293
+msgid "There is no image selected to save"
+msgstr ""
+
+#: mainWindow.py:313
+msgid "There is no image selected to print"
+msgstr ""
+
+#: mainWindow.py:358
+msgid "Save File..."
+msgstr ""
+
+#: mainWindow.py:367
+msgid "Image Files"
+msgstr ""
+
+#: mainWindow.py:384
+msgid "Error"
+msgstr ""
+
+#: frameImage.py:46 frameImage.py:106
+msgid "There is no images"
+msgstr ""
+
+#: frameImage.py:76
+msgid "Filename : "
+msgstr ""
+
+#: frameImage.py:77
+msgid "Codec : "
+msgstr ""
+
+#: frameImage.py:78
+msgid "Resolution : "
+msgstr ""
+
+#: frameImage.py:79
+msgid "Duration : "
+msgstr ""
+
+#: progressWindow.py:36
+msgid "Generating...."
+msgstr ""
+
+#: aboutWindow.py:39
+msgid ""
+"GFrameCatcher is a program that captures frames from a video file and save "
+"these frames as thumbnails in a single image file or all frames into a "
+"folder."
+msgstr ""
+
+#: aboutWindow.py:44
+msgid ""
+"Release under GNU General Public License Version 3 \n"
+"See http://www.gnu.org/licenses/gpl.html for details."
+msgstr ""
+
+#: mediaLibrary.py:114
+msgid "Stream returned no caps, exiting"
+msgstr ""
+
+#: mediaLibrary.py:165
+msgid "This version of gstreamer can't handle missing elements"
+msgstr ""
+
+#: mainWindow.ui.h:1
+msgid "Extract"
+msgstr ""
+
+#: mainWindow.ui.h:2
+msgid "Extract All"
+msgstr ""
+
+#: mainWindow.ui.h:3
+msgid "Extract to File"
+msgstr ""
+
+#: mainWindow.ui.h:4
+msgid "_Edit"
+msgstr ""
+
+#: mainWindow.ui.h:5
+msgid "_File"
+msgstr ""
+
+#: mainWindow.ui.h:6
+msgid "_Help"
+msgstr ""
+
+#: preferencesWindow.ui.h:1
+msgid "<b>Font</b>"
+msgstr ""
+
+#: preferencesWindow.ui.h:2
+msgid "<b>Frame</b>"
+msgstr ""
+
+#: preferencesWindow.ui.h:3
+msgid "<b>Frames</b>"
+msgstr ""
+
+#: preferencesWindow.ui.h:4
+msgid "<b>Image</b>"
+msgstr ""
+
+#: preferencesWindow.ui.h:5
+msgid "Add GFrameCatcher logo"
+msgstr ""
+
+#: preferencesWindow.ui.h:6
+msgid "Add Timestamps"
+msgstr ""
+
+#: preferencesWindow.ui.h:7
+msgid "Background Color:"
+msgstr ""
+
+#: preferencesWindow.ui.h:8
+msgid "Bilinear resize (Better quality)"
+msgstr ""
+
+#: preferencesWindow.ui.h:9
+msgid "Capture Every:"
+msgstr ""
+
+#: preferencesWindow.ui.h:10
+msgid "Columns:"
+msgstr ""
+
+#: preferencesWindow.ui.h:11
+msgid "Frames"
+msgstr ""
+
+#: preferencesWindow.ui.h:12
+msgid "Frames to Capture:"
+msgstr ""
+
+#: preferencesWindow.ui.h:13
+msgid "GFrameCatcher Preferences"
+msgstr ""
+
+#: preferencesWindow.ui.h:14
+msgid "Image Height:"
+msgstr ""
+
+#: preferencesWindow.ui.h:15
+msgid "Image Width:"
+msgstr ""
+
+#: preferencesWindow.ui.h:16
+msgid "Layout"
+msgstr ""
+
+#: preferencesWindow.ui.h:17
+msgid "Margin:"
+msgstr ""
+
+#: preferencesWindow.ui.h:18
+msgid "Translate header text"
+msgstr ""
+
+#: preferencesWindow.ui.h:19
+msgid "mm:ss"
+msgstr ""

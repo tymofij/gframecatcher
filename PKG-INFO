@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: gframecatcher
+Version: 1.4
+Summary: GFrameCatcher is a program that captures frames from a video file and save these frames as thumbnails in a single image file or all frames into a folder.
+Home-page: http://developer.berlios.de/projects/gframecatcher
+Author: Raul E.
+Author-email: UNKNOWN
+License: GPL
+Description: GFrameCatcher is a program that captures frames from a video file and save these frames as thumbnails in a single image file or all frames into a folder.
+Platform: Any
+Classifier: Topic :: Multimedia :: Video

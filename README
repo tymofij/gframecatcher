@@ -1,0 +1,52 @@
+About
+-----------------------------------
+GFrameCatcher is a program that captures frames from a video file and save these frames as thumbnails in a single image file or all frames into a folder.
+
+GFrameCatcher is write in Python , it uses GTK library (PyGTK) and GStreamer library (PyGST).
+
+GFrameCatcher is release under GNU General Public License Version 3 , see COPYING for details.
+
+
+Develop
+-------------------------------------
+For develop this program , I use NetBeans IDE 6.5 for Python
+
+http://www.netbeans.org/features/python
+
+
+Dependencies
+-------------------------------------
+
+Python >= 2.5.2
+Python-gtk2 (PyGTK) >= 2.13
+Python-gobject >= 2.15.3
+Python-gst (PyGST) >= 0.10.13
+GStreamer >= 0.10.21
+
+
+Run
+-------------------------------------
+$ python gframecatcher.py
+
+
+Package to distribution
+-------------------------------------
+$ python setup.py sdist --formats=gztar
+
+
+Install
+-------------------------------------
+$ python setup.py build
+# python setup.py install
+
+
+Run after installed
+-------------------------------------
+$ gframecatcher
+
+
+
+Author : Raul E.
+http://developer.berlios.de/projects/gframecatcher
+
+

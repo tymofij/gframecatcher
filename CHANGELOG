@@ -1,0 +1,23 @@
+gframecatcher v1.4
+- Migrate code from libglade to GtkBuilder.
+- Fixed end of stream loop bug in a few clips.
+- Source code cleanup.
+gframecatcher v1.3
+- Added frame zoom fit button.
+- Added frame text/uri-list format for drop.
+- Fixes.
+gframecatcher v1.2
+- Added setup.py to install.
+- Added drop video file in IconView.
+- Better GStreamer error handle.
+- Change preferences UI using GNOME Human Interface Guidelines,
+    http://library.gnome.org/devel/hig-book/stable/index.html
+- Ready for internationalization.
+- Bugfixes.
+gframecatcher v1.1
+- Migrate code from PIL to Cairo.
+- Now selected font is used.
+- PIL dependecy is not needed.
+- Add option to use bilinear resize.
+- Rewrite preferences module.
+- Main window stores width and height.

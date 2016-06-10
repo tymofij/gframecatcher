@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=GFrameCatcher
+Comment=GFrameCatcher is a program that captures frames from a video file and save these frames as thumbnails in a single image file or all frames into a folder.
+Type=Application
+Exec=gframecatcher
+Icon=gframecatcher
+Categories=AudioVideo;
+Terminal=false
+StartupNotify=false
