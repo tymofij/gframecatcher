@@ -22,16 +22,18 @@
 # Missing plugin install codec functionally is inspired from elisa play_bin_engine : http://elisa.fluendo.com
 #
 
-import pygst
-pygst.require("0.10")
-import gst
-if gst.pygst_version >= (0, 10, 10):
-    import gst.pbutils
+import gi
+gi.require_version('Gtk', '3.0')
+gi.require_version('Gst', '1.0')
+gi.require_version('GstPbutils', '1.0')
 
-import pygtk
-pygtk.require('2.0')
-import gtk
-import gobject
+from gi.repository import Gtk as gtk
+from gi.repository import GObject as gobject
+from gi.repository import GdkPixbuf, Gdk
+from gi.repository import Gst as gst
+gst.init(None)
+from gi.repository import GstPbutils as pbutils
+
 gobject.threads_init()
 
 from gettext import gettext as _
@@ -167,15 +169,16 @@ class MediaInfo(gobject.GObject) :
         self.errors.append(str(message.structure["type"]))
         self.errors.append(str(message.structure["detail"]))
         self.errors.append(str(message.structure["name"]))
-        detail = gst.pbutils.missing_plugin_message_get_installer_detail(message)
-        context = gst.pbutils.InstallPluginsContext()
+        detail = pbutils.missing_plugin_message_get_installer_detail(message)
+        context = pbutils.InstallPluginsContext()
         
         if window_id:
             context.set_x_id(window_id)
             
-        msg = gst.pbutils.install_plugins_async([detail], context,self.__pbutils_plugin_installed_cb)
+        msg = pbutils.install_plugins_async([detail], context,self.__pbutils_plugin_installed_cb)
+
     def __pbutils_plugin_installed_cb(self, result):
-        if result == gst.pbutils.INSTALL_PLUGINS_SUCCESS:
+        if result == pbutils.INSTALL_PLUGINS_SUCCESS:
             gst.update_registry()
         else:
             self.emit("error", result.value_name, "\n".join(self.errors))

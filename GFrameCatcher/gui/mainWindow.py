@@ -35,7 +35,7 @@ import urlparse
 import aboutWindow
 import progressWindow
 # import preferencesWindow
-# import GFrameCatcher.media.mediaLibrary
+import GFrameCatcher.media.mediaLibrary
 # import GFrameCatcher.libs.frameImage
 import GFrameCatcher.libs.preferences
 
@@ -65,7 +65,7 @@ class MainWindow(gtk.Window):
         self.window.set_default_size(int(self.preferences.getValue("Window", "width")), int(self.preferences.getValue("Window", "height")))
         self.builder.get_object("toolZoomFitButton").set_active(bool(int(self.preferences.getValue("Window", "zoomFit"))))
         self.window.show_all()
-        # self.MediaInfo = GFrameCatcher.media.mediaLibrary.MediaInfo()
+        self.MediaInfo = GFrameCatcher.media.mediaLibrary.MediaInfo()
         self.model = gtk.ListStore(GdkPixbuf.Pixbuf, str)
         self.builder.get_object("frameView").set_from_pixbuf(None)
         videoDrop = [("text/uri-list" , 0 , 82 )]
@@ -412,8 +412,8 @@ class MainWindow(gtk.Window):
              fileChooser.destroy()
         return outputFileName
 
-    def __showErrorDialog(self, exc, headerText= None):
-        ErrorDialog = gtk.MessageDialog(self.window, 0, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, None)
+    def __showErrorDialog(self, exc, headerText=None):
+        ErrorDialog = gtk.MessageDialog(self.window, 0, gtk.MessageType.ERROR, gtk.ButtonsType.OK, None)
         if(headerText == None):
             headerText= _("Error")
         ErrorDialog.set_markup("<span weight=\"bold\" size=\"larger\">" + str(headerText) + "</span>")
