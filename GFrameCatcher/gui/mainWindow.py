@@ -139,12 +139,13 @@ class MainWindow(gtk.Window):
 
     def on_imageOpen_activate(self, widget):
         fileChooser = gtk.FileChooserDialog(_("Open File..."),
-        self.window, gtk.FILE_CHOOSER_ACTION_OPEN, 
-        (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL,
-        gtk.STOCK_OPEN, gtk.RESPONSE_OK))
+            self.window, gtk.FileChooserAction.OPEN, 
+            (gtk.STOCK_CANCEL, gtk.ResponseType.CANCEL,
+            gtk.STOCK_OPEN, gtk.ResponseType.OK)
+        )
         
         fileChooser.set_select_multiple(False)
-        fileChooser.set_default_response(gtk.RESPONSE_OK)
+        fileChooser.set_default_response(gtk.ResponseType.OK)
         
         filter = gtk.FileFilter()
         filter.set_name(_("Video Files"))
@@ -167,12 +168,12 @@ class MainWindow(gtk.Window):
         
         fileChooserResponse = fileChooser.run()
         
-        if fileChooserResponse == gtk.RESPONSE_OK:
-             self.fileName =  fileChooser.get_filename()
-             fileChooser.destroy()
-             self.loadThumbnails()
+        if fileChooserResponse == gtk.ResponseType.OK:
+            self.fileName = fileChooser.get_filename()
+            fileChooser.destroy()
+            self.loadThumbnails()
         else:
-             fileChooser.destroy()
+            fileChooser.destroy()
 
     def on_mediaLibrary_progress(self, mediaInfo, progress, widget):
         widget.setProgress(progress)
