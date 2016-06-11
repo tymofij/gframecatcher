@@ -26,7 +26,7 @@ from gettext import gettext as _
 
 import GFrameCatcher.libs.preferences
 
-class AboutWindow(Gtk.Window) :
+class AboutWindow(Gtk.Window):
     def __init__(self, parent):
         fileDirectory = os.path.dirname(__file__)
         self.dialog = Gtk.AboutDialog()

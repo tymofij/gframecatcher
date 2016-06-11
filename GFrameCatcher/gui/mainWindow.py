@@ -33,7 +33,7 @@ import mimetypes
 import urlparse
 
 import aboutWindow
-# import progressWindow
+import progressWindow
 # import preferencesWindow
 # import GFrameCatcher.media.mediaLibrary
 # import GFrameCatcher.libs.frameImage
