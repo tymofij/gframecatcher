@@ -30,6 +30,7 @@ class Preferences :
     __KeyValue = None
     __locale = None
     __localePath = None
+
     def __init__(self):
         self.__KeyValue = {
         "Window|width" : "400",
@@ -48,12 +49,14 @@ class Preferences :
         "Image|translateHeaderText" : "0" ,
         "Capture|seconds" : "59" ,
         "Capture|frames" : "24" ,
-        "Capture|type" : "SECONDS" }
-        
+        "Capture|type" : "SECONDS"
+        }
         self.__getPreferencesFile()
+
     def __readForFile(self):
          self.__configParser = ConfigParser()
          self.__configParser.read(self.__getPreferencesFile())
+
     def setDefaults(self):
          self.__configParser = ConfigParser()
          keys = self.__KeyValue.keys()
@@ -65,6 +68,7 @@ class Preferences :
                  lastSection = section[0]
                  self.__configParser.add_section(section[0])
              self.__configParser.set(section[0], section[1], self.__KeyValue[keys[index]])
+
     def __getPreferencesFile(self):
        if(self.__preferencesFile == None):
          homePath = os.path.expanduser("~")
@@ -81,6 +85,7 @@ class Preferences :
          else:
             self.__readForFile()
        return self.__preferencesFile
+
     def __getLocalePath(self):
         if(self.__localePath == None):
             basePath = os.path.abspath(__file__)
@@ -89,6 +94,7 @@ class Preferences :
             if not os.path.isdir(self.__localePath):
                 self.__localePath = os.path.join(prefix , "mo")
         return self.__localePath
+
     def __getLocale(self):
         if(self.__locale == None):
             myLocale = locale.getdefaultlocale()[0]
@@ -98,18 +104,23 @@ class Preferences :
             if (language != None):
                 self.__locale += language.split(":")
         return self.__locale
+
     def __getProgramName(self):
         return self.__programName
+
     def __getVersion(self):
         return self.__version
+
     def setValue(self,section,key,value):
        self.__configParser.set(section,key,value)
+
     def getValue(self,section,key):
         try:
             return self.__configParser.get(section,key)
         except NoOptionError:
             myKey = section + "|" + key
             return self.__KeyValue[myKey]
+            
     def save(self):
        myFile = open(self.__getPreferencesFile(),"w")
        self.__configParser.write(myFile)

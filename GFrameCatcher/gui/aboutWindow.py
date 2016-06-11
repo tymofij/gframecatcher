@@ -24,15 +24,14 @@ from gi.repository import Gtk, GdkPixbuf
 import os
 from gettext import gettext as _
 
-# import GFrameCatcher.libs.preferences
+import GFrameCatcher.libs.preferences
 
 class AboutWindow(Gtk.Window) :
     def __init__(self, parent):
         fileDirectory = os.path.dirname(__file__)
         self.dialog = Gtk.AboutDialog()
         self.dialog.set_name("GFrameCatcher")
-        # self.dialog.set_version(GFrameCatcher.libs.preferences.version())
-        self.dialog.set_version("1.5")
+        self.dialog.set_version(GFrameCatcher.libs.preferences.version())
         self.dialog.set_logo(GdkPixbuf.Pixbuf.new_from_file(os.path.join(fileDirectory , "../icons/gframecatcher128.png")))
         self.dialog.set_comments(_(
             "GFrameCatcher is a program that captures frames from a video file "
