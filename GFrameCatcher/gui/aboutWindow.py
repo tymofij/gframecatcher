@@ -17,41 +17,43 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor Boston, MA 02110-1301,  USA
 
-import pygtk
-pygtk.require('2.0')
-import gtk
-import gtk.glade
-import webbrowser
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk, GdkPixbuf
+
 import os
 from gettext import gettext as _
 
-import GFrameCatcher.libs.preferences
+# import GFrameCatcher.libs.preferences
 
-class AboutWindow :
+class AboutWindow(Gtk.Window) :
     def __init__(self, parent):
         fileDirectory = os.path.dirname(__file__)
-        self.dialog = gtk.AboutDialog()
-        gtk.about_dialog_set_url_hook(self.__urlShow, None)
-        #self.dialog.set_icon(gtk.gdk.pixbuf_new_from_file("icons/gframecatcher16.png"))
+        self.dialog = Gtk.AboutDialog()
         self.dialog.set_name("GFrameCatcher")
-        self.dialog.set_version(GFrameCatcher.libs.preferences.version())
-        self.dialog.set_logo(gtk.gdk.pixbuf_new_from_file(os.path.join(fileDirectory , "../icons/gframecatcher128.png")))
-        self.dialog.set_comments(_("GFrameCatcher is a program that captures frames from a video file and save these frames as thumbnails in a single image file or all frames into a folder."))
+        # self.dialog.set_version(GFrameCatcher.libs.preferences.version())
+        self.dialog.set_version("1.5")
+        self.dialog.set_logo(GdkPixbuf.Pixbuf.new_from_file(os.path.join(fileDirectory , "../icons/gframecatcher128.png")))
+        self.dialog.set_comments(_(
+            "GFrameCatcher is a program that captures frames from a video file "
+            "and save these frames as thumbnails in a single image file or all frames into a folder."))
         #self.dialog.set_authors("Raul E.")
         try:
             self.dialog.set_license(open("/usr/share/common-licenses/GPL-3").read())
         except Exception:
-            self.dialog.set_license(_("Release under GNU General Public License Version 3 \nSee http://www.gnu.org/licenses/gpl.html for details."))
+            self.dialog.set_license(_(
+                "Release under GNU General Public License Version 3 \n"
+                "See http://www.gnu.org/licenses/gpl.html for details."))
         self.dialog.set_copyright("(c) 2008 Raul E.")
         self.dialog.set_website_label("http://developer.berlios.de/projects/gframecatcher")
         self.dialog.set_website("http://developer.berlios.de/projects/gframecatcher")
         self.dialog.set_transient_for(parent)
         self.dialog.set_destroy_with_parent(True)
         self.dialog.connect("response", self.close)
-    def __urlShow(self, dialog, link, data):
-        webbrowser.open_new(link)
+
     def show(self):
         self.dialog.show()
+
     def close(self, widget, response):
         self.dialog.hide()
  

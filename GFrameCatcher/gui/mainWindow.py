@@ -32,7 +32,7 @@ import sys
 import mimetypes
 import urlparse
 
-# import aboutWindow
+import aboutWindow
 # import progressWindow
 # import preferencesWindow
 # import GFrameCatcher.media.mediaLibrary
