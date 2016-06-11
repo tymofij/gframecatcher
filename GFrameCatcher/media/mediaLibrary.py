@@ -141,8 +141,8 @@ class MediaInfo(gobject.GObject) :
                 else:
                     self.player.send_event(gst.event_new_eos())
                     self.__isEndOfStream = True
-           percentage = float(100 * position) / float(self.__duration)
-           self.emit("progress", percentage)
+            percentage = float(100 * position) / float(self.__duration)
+            self.emit("progress", percentage)
 
     def __onMessage(self, bus, message):
         if (message.type == gst.MESSAGE_ELEMENT):
